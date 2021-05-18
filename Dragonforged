@@ -158,6 +158,279 @@
 			<stat inline="true" name="draconic-ancestry:breath" value="5 by 30 ft. line (Dex. save)" />
 		</rules>
 	</element>
+	<element name="Integrated Protection" type="Racial Trait" source="Wayfinderâ€™s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_WARFORGED_INTEGRATED_PROTECTION">
+		<description>
+			<p>Your body has built-in defensive layers, which determine your armor class. You gain no benefit from wearing armor, but if you are using a shield, you apply its bonus as normal.</p>
+			<p class="indent">You can alter your body to enter different defensive modes; each time you finish a long rest rest, choose one mode to adopt from the Integrated Protection table, provided you meet the modeâ€™s prerequisite.</p>
+			<h6>INTEGRATED PROTECTION</h6>
+			<table>
+				<thead>
+					<tr><td>Mode</td><td>Prerequisite</td><td>Effect</td></tr>
+				</thead>
+					<tr><td>Darkwood Core (unarmored)</td><td>None</td><td>11 + your Dexterity modifier (add proficiency bonus if proficiency with light armor)</td></tr>
+					<tr><td>Composite Plating (armor)</td><td>Medium armor proficiency</td><td>13 + your Dexterity modifier (maximum of 2) + your proficiency bonus.</td></tr>
+					<tr><td>Heavy Plating (armor)</td><td>Heavy armor proficiency</td><td>16 + your proficiency bonus; disadvantage on Dexterity (Stealth) checks.</td></tr>
+			</table>
+		</description>
+		<sheet>
+			<description>You can alter your body to enter different defensive modes each time you finish a long rest rest.
+			Darkwood Core ({{warforged:darkwood core}}), Composite Plating ({{warforged:composite plating}}), Heavy Plating ({{warforged:heavy plating}})</description>
+		</sheet>
+		<rules>
+			<select type="Racial Trait" name="Integrated Protection" supports="Warforged Integrated Protection" />
+			
+			<stat name="warforged:darkwood core" value="11" />
+			<stat name="warforged:darkwood core" value="dexterity:modifier" />
+			<stat name="warforged:darkwood core" value="proficiency" requirements="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" />
+
+			<stat name="warforged:composite plating" value="13" />
+			<stat name="warforged:composite plating" value="dexterity:modifier" maximum="ac:armored:dexterity:cap" />
+			<stat name="warforged:composite plating" value="proficiency" />
+
+			<stat name="warforged:heavy plating" value="16" />
+			<stat name="warforged:heavy plating" value="proficiency" />
+		</rules>
+	</element>
+
+	<element name="Darkwood Core" type="Racial Trait" source="Wayfinderâ€™s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_WARFORGED_INTEGRATED_PROTECTION_DARKWOOD_CORE">
+		<supports>Warforged Integrated Protection</supports>
+		<description>
+			<p><strong><em>Armor Class.</em></strong> 11 + your Dexterity modifier (add proficiency bonus if proficiency with light armor)</p>
+		</description>
+		<sheet display="false">
+			<description>11 + your Dexterity modifier (add proficiency bonus if proficiency with light armor)</description>
+		</sheet>
+		<rules>
+			<stat name="ac:calculation" value="warforged:darkwood core" bonus="calculation" alt="Darkwood Core (Warforged)" />
+		</rules>
+	</element>
+	<element name="Composite Plating" type="Racial Trait" source="Wayfinderâ€™s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_WARFORGED_INTEGRATED_PROTECTION_COMPOSITE_PLATING">
+		<supports>Warforged Integrated Protection</supports>
+		<prerequisite>Medium armor proficiency</prerequisite>
+		<requirements>ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR</requirements>
+		<description>
+			<p><em>Prerequisite: Medium armor proficiency</em></p>
+			<p><strong><em>Armor Class.</em></strong> 13 + your Dexterity modifier (maximum of 2) + your proficiency bonus.</p>
+		</description>
+		<sheet display="false">
+			<description>13 + your Dexterity modifier (maximum of 2) + your proficiency bonus.</description>
+		</sheet>
+		<rules>
+			<stat name="ac:calculation" value="warforged:composite plating" bonus="calculation" alt="Composite Plating (Warforged)" />
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_COUNTS_AS_EQUIPPED_ARMOR" />			
+		</rules>
+	</element>
+	<element name="Heavy Plating" type="Racial Trait" source="Wayfinderâ€™s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_WARFORGED_INTEGRATED_PROTECTION_HEAVY_PLATING">
+		<supports>Warforged Integrated Protection</supports>
+		<prerequisite>Heavy armor proficiency</prerequisite>
+		<requirements>ID_PROFICIENCY_ARMOR_PROFICIENCY_HEAVY_ARMOR</requirements>
+		<description>
+			<p><em>Prerequisite: Heavy armor proficiency</em></p>
+			<p><strong><em>Armor Class.</em></strong> 16 + your proficiency bonus; disadvantage on Dexterity (Stealth) checks.</p>
+		</description>
+		<sheet display="false">
+			<description>16 + your proficiency bonus; disadvantage on Dexterity (Stealth) checks.</description>
+		</sheet>
+		<rules>
+			<stat name="ac:calculation" value="warforged:heavy plating" bonus="calculation" alt="Heavy Plating (Warforged)" />	
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_STEALTH_DISADVANTAGE" />		
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_COUNTS_AS_EQUIPPED_ARMOR" />
+		</rules>
+	</element>
+
+	<element name="Envoy Warforged" type="Sub Race" source="Wayfinderâ€™s Guide to Eberron" id="ID_WOTC_WGTE_SUBRACE_WARFORGED_ENVOY">
+		<supports>Warforged</supports>
+		<description>
+			<p>As an envoy, you were designed with a certain specialized function in mind. You might be an assassin, a healer, or an entertainer, to name a few possibilities. Envoys are the rarest of the warforged subraces, and yours could be a unique design.</p>
+			<p class="indent"><strong><em>Ability Score Increase.</em></strong> Two different ability scores of your choice increase by 1.</p>
+			<p class="indent"><strong><em>Specialized Design.</em></strong> You gain one skill proficiency of your choice, one tool proficiency of your choice, and fluency in one language of your choice.</p>
+			<p class="indent"><strong><em>Integrated Tool.</em></strong> Choose one tool youâ€™re proficient with. This tool is integrated into your body, and you double your proficiency bonus for any ability checks you make with it. You must have your hands free to use this integrated tool.</p>
+		</description>
+		<sheet display="false">
+			<description>As an envoy, you were designed with a certain specialized function in mind.</description>
+		</sheet>
+		<rules>
+			<select type="Ability Score Improvement" name="Envoy Warforged" supports="Envoy Warforged" number="2"/>
+			<grant type="Racial Trait" id="ID_WOTC_WGTE_RACIAL_TRAIT_WARFORGED_ENVOY_SPECIALIZED_DESIGN" />
+			<grant type="Racial Trait" id="ID_WOTC_WGTE_RACIAL_TRAIT_WARFORGED_ENVOY_INTEGRATED_TOOL" />
+		</rules>
+	</element>
+	<element name="Specialized Design" type="Racial Trait" source="Wayfinderâ€™s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_WARFORGED_ENVOY_SPECIALIZED_DESIGN">
+		<description>
+			<p>You gain one skill proficiency of your choice, one tool proficiency of your choice, and fluency in one language of your choice.</p>
+		</description>
+		<sheet display="false">
+			<description>You gain one skill proficiency of your choice, one tool proficiency of your choice, and fluency in one language of your choice.</description>
+		</sheet>
+		<rules>
+			<select type="Proficiency" name="Skill Proficiency, Specialized Design" supports="Skill" />
+			<select type="Proficiency" name="Tool Proficiency, Specialized Design" supports="Tool" />
+			<select type="Language" name="Specialized Design" supports="Standard||Exotic" />
+		</rules>
+	</element>
+	<element name="Integrated Tool" type="Racial Trait" source="Wayfinderâ€™s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_WARFORGED_ENVOY_INTEGRATED_TOOL">
+		<description>
+			<p>Choose one tool youâ€™re proficient with. This tool is integrated into your body, and you double your proficiency bonus for any ability checks you make with it. You must have your hands free to use this integrated tool.</p>
+		</description>
+		<sheet>
+			<description>A tool youâ€™re proficienct with is integrated into your body, and you double your proficiency bonus for any ability checks you make with it. You must have your hands free to use this integrated tool.</description>
+		</sheet>
+		<rules>
+			<!-- todo: select from existing tools much like skill expertise, but skill expertise has class feature elements for each skill -->
+			<!-- <select type="Proficiency" name="Integrated Tool" supports="Tool" existing="true" /> -->
+			
+			<!-- generate expertise elements automatically for each tool proficiency instead? -->
+		</rules>
+	</element>
+
+	<element name="Juggernaut Warforged" type="Sub Race" source="Wayfinderâ€™s Guide to Eberron" id="ID_WOTC_WGTE_SUBRACE_WARFORGED_JUGGERNAUT">
+		<supports>Warforged</supports>
+		<description>
+			<p>Youâ€™re an imposing war machine built for close combat and raw might. You tower over your comrades; juggernaut warforged stand between 6 and 7 feet in height and can weigh up to 450 pounds.</p>
+			<p class="indent"><strong><em>Ability Score Increase.</em></strong> Your Strength score increases by 2.</p>
+			<p class="indent"><strong><em>Iron Fists.</em></strong> When you make an unarmed strike, you can deal 1d4 + Strength modifier bludgeoning damage instead of the normal damage.</p>
+			<p class="indent"><strong><em>Powerful Build.</em></strong> You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift.</p>
+		</description>
+		<sheet display="false">
+			<description>Youâ€™re an imposing war machine built for close combat and raw might.</description>
+		</sheet>
+		<rules>
+			<stat name="strength" value="2" />
+			<grant type="Racial Trait" id="ID_WOTC_WGTE_RACIAL_TRAIT_WARFORGED_JUGGERNAUT_IRON_FISTS" />
+			<grant type="Racial Trait" id="ID_WOTC_WGTE_RACIAL_TRAIT_WARFORGED_JUGGERNAUT_POWERFUL_BUILD" />
+		</rules>
+	</element>
+	<element name="Iron Fists" type="Racial Trait" source="Wayfinderâ€™s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_WARFORGED_JUGGERNAUT_IRON_FISTS">
+		<description>
+			<p>When you make an unarmed strike, you can deal 1d4 + Strength modifier bludgeoning damage instead of the normal damage.</p>
+		</description>
+		<sheet>
+			<description>When you make an unarmed strike, you can deal 1d4+{{strength:modifier}} bludgeoning damage.</description>
+		</sheet>
+	</element>
+	<element name="Powerful Build" type="Racial Trait" source="Wayfinderâ€™s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_WARFORGED_JUGGERNAUT_POWERFUL_BUILD">
+		<description>
+			<p>You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift.</p>
+		</description>
+		<sheet>
+			<description>You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift.</description>
+		</sheet>
+		<rules>
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_WEIGHT_CAPACITY_COUNTS_AS_LARGER" />
+		</rules>
+	</element>
+
+	<element name="Skirmisher Warforged" type="Sub Race" source="Wayfinderâ€™s Guide to Eberron" id="ID_WOTC_WGTE_SUBRACE_WARFORGED_SKIRMISHER">
+		<supports>Warforged</supports>
+		<description>
+			<p>You were built to scout the edges of battle and outmaneuver your enemies. You are lean and designed for speed.</p>
+			<p class="indent"><strong><em>Ability Score Increase.</em></strong> Your Dexterity score increases by 2.</p>
+			<p class="indent"><strong><em>Swift.</em></strong> Your walking speed is increased by 5 feet.</p>
+			<p class="indent"><strong><em>Light Step.</em></strong> When you are traveling alone for an extended period of time (one hour or more), you can move stealthily at a normal pace.</p>
+		</description>
+		<sheet display="false">
+			<description>You were built to scout the edges of battle and outmaneuver your enemies.</description>
+		</sheet>
+		<rules>
+			<stat name="dexterity" value="2" />
+			<grant type="Racial Trait" id="ID_WOTC_WGTE_RACIAL_TRAIT_WARFORGED_SKIRMISHER_SWIFT" />
+			<grant type="Racial Trait" id="ID_WOTC_WGTE_RACIAL_TRAIT_WARFORGED_SKIRMISHER_LIGHT_STEP" />
+		</rules>
+	</element>
+	<element name="Swift" type="Racial Trait" source="Wayfinderâ€™s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_WARFORGED_SKIRMISHER_SWIFT">
+		<description>
+			<p>Your walking speed is increased by 5 feet.</p>
+		</description>
+		<sheet display="false">
+			<description>Your walking speed is increased by 5 feet.</description>
+		</sheet>
+		<rules>
+			<stat name="innate speed" value="5" />
+		</rules>
+	</element>
+	<element name="Light Step" type="Racial Trait" source="Wayfinderâ€™s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_WARFORGED_SKIRMISHER_LIGHT_STEP">
+		<description>
+			<p>When you are traveling alone for an extended period of time (one hour or more), you can move stealthily at a normal pace.</p>
+		</description>
+		<sheet>
+			<description>When you are traveling alone for an extended period of time (one hour or more), you can move stealthily at a normal pace.</description>
+		</sheet>
+	</element>
+
+	<!-- Envoy Ability Score Increase-->
+	<element name="Strength" type="Ability Score Improvement" source="Wayfinderâ€™s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_WARFORGED_ENVOY_STRENGTH">
+		<compendium display="false" />
+		<supports>Envoy Warforged</supports>
+		<requirements>ID_WOTC_WGTE_SUBRACE_WARFORGED_ENVOY</requirements>
+		<description>
+			<p>Your Strength increases by 1.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="strength" value="1" alt="Envoy Warforged" />
+		</rules>
+	</element>
+	<element name="Dexterity" type="Ability Score Improvement" source="Wayfinderâ€™s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_WARFORGED_ENVOY_DEXTERITY">
+		<compendium display="false" />
+		<supports>Envoy Warforged</supports>
+		<requirements>ID_WOTC_WGTE_SUBRACE_WARFORGED_ENVOY</requirements>
+		<description>
+			<p>Your Dexterity increases by 1.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="dexterity" value="1" alt="Envoy Warforged" />
+		</rules>
+	</element>
+	<element name="Constitution" type="Ability Score Improvement" source="Wayfinderâ€™s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_WARFORGED_ENVOY_CONSTITUTION">
+		<compendium display="false" />
+		<supports>Envoy Warforged</supports>
+		<requirements>ID_WOTC_WGTE_SUBRACE_WARFORGED_ENVOY</requirements>
+		<description>
+			<p>Your Constitution increases by 1.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="constitution" value="1" alt="Envoy Warforged" />
+		</rules>
+	</element>
+	<element name="Intelligence" type="Ability Score Improvement" source="Wayfinderâ€™s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_WARFORGED_ENVOY_INTELLIGENCE">
+		<compendium display="false" />
+		<supports>Envoy Warforged</supports>
+		<requirements>ID_WOTC_WGTE_SUBRACE_WARFORGED_ENVOY</requirements>
+		<description>
+			<p>Your Intelligence increases by 1.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="intelligence" value="1" alt="Envoy Warforged" />
+		</rules>
+	</element>
+	<element name="Wisdom" type="Ability Score Improvement" source="Wayfinderâ€™s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_WARFORGED_ENVOY_WISDOM">
+		<compendium display="false" />
+		<supports>Envoy Warforged</supports>
+		<requirements>ID_WOTC_WGTE_SUBRACE_WARFORGED_ENVOY</requirements>
+		<description>
+			<p>Your Wisdom increases by 1.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="wisdom" value="1" alt="Envoy Warforged" />
+		</rules>
+	</element>
+	<element name="Charisma" type="Ability Score Improvement" source="Wayfinderâ€™s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_WARFORGED_ENVOY_CHARISMA">
+		<compendium display="false" />
+		<supports>Envoy Warforged</supports>
+		<requirements>ID_WOTC_WGTE_SUBRACE_WARFORGED_ENVOY</requirements>
+		<description>
+			<p>Your Charisma increases by 1.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="charisma" value="1" alt="Envoy Warforged" />
+		</rules>
+	</element>
+
 	<element name="Draconic Ancestry (Blue)" type="Racial Trait" source="Playerâ€™s Handbook" id="ID_RACIAL_TRAIT_DRACONIC_ANCESTRY_BLUE">
 		<supports>Draconic Ancestry</supports>
 		<description>
