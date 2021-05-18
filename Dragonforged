@@ -84,80 +84,6 @@
 			<select type="Language" name="Language, Warforged" supports="Standard||Exotic" />
 		</rules>
 	</element>
-	<element name="Draconic Ancestry" type="Racial Trait" source="Playerâ€™s Handbook" id="ID_RACIAL_TRAIT_DRACONIC_ANCESTRY">
-		<description>
-			<p>You have draconic ancestry. Choose one type of dragon from the Draconic Ancestry table. Your breath weapon and damage resistance are determined by the dragon type, as shown in the table.</p>
-			<h5>DRACONIC ANCESTRY</h5>
-			<table>
-				<thead>
-					<tr><td>Dragon</td><td>Damage Type</td><td>Breath Weapon</td></tr>
-				</thead>
-				<tr><td>Black</td><td>Acid</td><td>5 by 30 ft. line (Dex. save)</td></tr>
-				<tr><td>Blue</td><td>Lightning</td><td>5 by 30 ft. line (Dex. save)</td></tr>
-				<tr><td>Brass</td><td>Fire</td><td>5 by 30 ft. line (Dex. save)</td></tr>
-				<tr><td>Bronze</td><td>Lightning</td><td>5 by 30 ft. line (Dex. save)</td></tr>
-				<tr><td>Copper</td><td>Acid</td><td>5 by 30 ft. line (Dex. save)</td></tr>
-				<tr><td>Gold</td><td>Fire</td><td>15 ft. cone (Dex. save)</td></tr>
-				<tr><td>Green</td><td>Poison</td><td>15 ft. cone (Con. save)</td></tr>
-				<tr><td>Red</td><td>Fire</td><td>15 ft. cone (Dex. save)</td></tr>
-				<tr><td>Silver</td><td>Cold</td><td>15 ft. cone (Con. save)</td></tr>
-				<tr><td>White</td><td>Cold</td><td>15 ft. cone (Con. save)</td></tr>
-			</table>
-		</description>
-		<rules>
-			<select type="Racial Trait" name="Draconic Ancestry" supports="Draconic Ancestry" />
-		</rules>
-	</element>
-	<element name="Breath Weapon" type="Racial Trait" source="Playerâ€™s Handbook" id="ID_RACIAL_TRAIT_BREATH_WEAPON">
-		<description>
-			<p>You can use your action to exhale destructive energy. Your draconic ancestry determines the size, shape, and damage type of the exhalation.</p>
-			<p>When you use your breath weapon, each creature in the area of the exhalation must make a saving throw, the type of which is determined by your draconic ancestry. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th level, and 5d6 at 16th level.</p>
-			<p>After you use your breath weapon, you canâ€™t use it again until you complete a short or long rest.</p>
-		</description>
-		<sheet action="Action" usage="1/Short Rest">
-			<description>Exhale destructive energy. Your breath weapon does {{breath-weapon:dice count}}d{{breath-weapon:dice size}} {{draconic-ancestry:damage type}} damage in a {{draconic-ancestry:breath}} DC {{breath-weapon:dc}}</description>
-		</sheet>
-		<rules>
-			<stat name="breath-weapon:dc" value="8" />
-			<stat name="breath-weapon:dc" value="constitution:modifier" />
-			<stat name="breath-weapon:dc" value="proficiency" />
-			<stat name="breath-weapon:dice size" value="6" bonus="dice" />
-			<stat name="breath-weapon:dice count" value="2" level="1" />
-			<stat name="breath-weapon:dice count" value="1" level="6" />
-			<stat name="breath-weapon:dice count" value="1" level="11" />
-			<stat name="breath-weapon:dice count" value="1" level="16" />
-		</rules>
-	</element>
-	<element name="Damage Resistance" type="Racial Trait" source="Playerâ€™s Handbook" id="ID_RACIAL_TRAIT_DAMAGE_RESISTANCE">
-		<description>
-			<p>You have resistance to the damage type associated with your draconic ancestry.</p>
-		</description>
-		<sheet>
-			<description>You have resistance to {{draconic-ancestry:damage type}}.</description>
-		</sheet>
-		<rules>
-			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_ACID" requirements="ID_RACIAL_TRAIT_DRACONIC_ANCESTRY_BLACK||ID_RACIAL_TRAIT_DRACONIC_ANCESTRY_COPPER" />
-			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_LIGHTNING" requirements="ID_RACIAL_TRAIT_DRACONIC_ANCESTRY_BLUE||ID_RACIAL_TRAIT_DRACONIC_ANCESTRY_BRONZE" />
-			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FIRE" requirements="ID_RACIAL_TRAIT_DRACONIC_ANCESTRY_BRASS||ID_RACIAL_TRAIT_DRACONIC_ANCESTRY_GOLD||ID_RACIAL_TRAIT_DRACONIC_ANCESTRY_RED" />
-			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_POISON" requirements="ID_RACIAL_TRAIT_DRACONIC_ANCESTRY_GREEN" />
-			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_COLD" requirements="ID_RACIAL_TRAIT_DRACONIC_ANCESTRY_SILVER||ID_RACIAL_TRAIT_DRACONIC_ANCESTRY_WHITE" />
-		</rules>
-	</element>
-
-	<element name="Draconic Ancestry (Black)" type="Racial Trait" source="Playerâ€™s Handbook" id="ID_RACIAL_TRAIT_DRACONIC_ANCESTRY_BLACK">
-		<supports>Draconic Ancestry</supports>
-		<description>
-			<div element="ID_RACIAL_TRAIT_DRACONIC_ANCESTRY" />
-		</description>
-		<sheet alt="Black">
-			<description>Your draconic ancestry is {{draconic-ancestry}}. Your damage type is {{draconic-ancestry:damage type}}. Your breath weapon is {{draconic-ancestry:breath}}.</description>
-		</sheet>
-		<rules>
-			<stat inline="true" name="draconic-ancestry" value="Black"/>
-			<stat inline="true" name="draconic-ancestry:damage type" value="Acid" />
-			<stat inline="true" name="draconic-ancestry:breath" value="5 by 30 ft. line (Dex. save)" />
-		</rules>
-	</element>
 	<element name="Integrated Protection" type="Racial Trait" source="Wayfinderâ€™s Guide to Eberron" id="ID_WOTC_WGTE_RACIAL_TRAIT_WARFORGED_INTEGRATED_PROTECTION">
 		<description>
 			<p>Your body has built-in defensive layers, which determine your armor class. You gain no benefit from wearing armor, but if you are using a shield, you apply its bonus as normal.</p>
@@ -430,6 +356,81 @@
 			<stat name="charisma" value="1" alt="Envoy Warforged" />
 		</rules>
 	</element>
+	<element name="Draconic Ancestry" type="Racial Trait" source="Playerâ€™s Handbook" id="ID_RACIAL_TRAIT_DRACONIC_ANCESTRY">
+		<description>
+			<p>You have draconic ancestry. Choose one type of dragon from the Draconic Ancestry table. Your breath weapon and damage resistance are determined by the dragon type, as shown in the table.</p>
+			<h5>DRACONIC ANCESTRY</h5>
+			<table>
+				<thead>
+					<tr><td>Dragon</td><td>Damage Type</td><td>Breath Weapon</td></tr>
+				</thead>
+				<tr><td>Black</td><td>Acid</td><td>5 by 30 ft. line (Dex. save)</td></tr>
+				<tr><td>Blue</td><td>Lightning</td><td>5 by 30 ft. line (Dex. save)</td></tr>
+				<tr><td>Brass</td><td>Fire</td><td>5 by 30 ft. line (Dex. save)</td></tr>
+				<tr><td>Bronze</td><td>Lightning</td><td>5 by 30 ft. line (Dex. save)</td></tr>
+				<tr><td>Copper</td><td>Acid</td><td>5 by 30 ft. line (Dex. save)</td></tr>
+				<tr><td>Gold</td><td>Fire</td><td>15 ft. cone (Dex. save)</td></tr>
+				<tr><td>Green</td><td>Poison</td><td>15 ft. cone (Con. save)</td></tr>
+				<tr><td>Red</td><td>Fire</td><td>15 ft. cone (Dex. save)</td></tr>
+				<tr><td>Silver</td><td>Cold</td><td>15 ft. cone (Con. save)</td></tr>
+				<tr><td>White</td><td>Cold</td><td>15 ft. cone (Con. save)</td></tr>
+			</table>
+		</description>
+		<rules>
+			<select type="Racial Trait" name="Draconic Ancestry" supports="Draconic Ancestry" />
+		</rules>
+	</element>
+	<element name="Breath Weapon" type="Racial Trait" source="Playerâ€™s Handbook" id="ID_RACIAL_TRAIT_BREATH_WEAPON">
+		<description>
+			<p>You can use your action to exhale destructive energy. Your draconic ancestry determines the size, shape, and damage type of the exhalation.</p>
+			<p>When you use your breath weapon, each creature in the area of the exhalation must make a saving throw, the type of which is determined by your draconic ancestry. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th level, and 5d6 at 16th level.</p>
+			<p>After you use your breath weapon, you canâ€™t use it again until you complete a short or long rest.</p>
+		</description>
+		<sheet action="Action" usage="1/Short Rest">
+			<description>Exhale destructive energy. Your breath weapon does {{breath-weapon:dice count}}d{{breath-weapon:dice size}} {{draconic-ancestry:damage type}} damage in a {{draconic-ancestry:breath}} DC {{breath-weapon:dc}}</description>
+		</sheet>
+		<rules>
+			<stat name="breath-weapon:dc" value="8" />
+			<stat name="breath-weapon:dc" value="constitution:modifier" />
+			<stat name="breath-weapon:dc" value="proficiency" />
+			<stat name="breath-weapon:dice size" value="6" bonus="dice" />
+			<stat name="breath-weapon:dice count" value="2" level="1" />
+			<stat name="breath-weapon:dice count" value="1" level="6" />
+			<stat name="breath-weapon:dice count" value="1" level="11" />
+			<stat name="breath-weapon:dice count" value="1" level="16" />
+		</rules>
+	</element>
+	<element name="Damage Resistance" type="Racial Trait" source="Playerâ€™s Handbook" id="ID_RACIAL_TRAIT_DAMAGE_RESISTANCE">
+		<description>
+			<p>You have resistance to the damage type associated with your draconic ancestry.</p>
+		</description>
+		<sheet>
+			<description>You have resistance to {{draconic-ancestry:damage type}}.</description>
+		</sheet>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_ACID" requirements="ID_RACIAL_TRAIT_DRACONIC_ANCESTRY_BLACK||ID_RACIAL_TRAIT_DRACONIC_ANCESTRY_COPPER" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_LIGHTNING" requirements="ID_RACIAL_TRAIT_DRACONIC_ANCESTRY_BLUE||ID_RACIAL_TRAIT_DRACONIC_ANCESTRY_BRONZE" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FIRE" requirements="ID_RACIAL_TRAIT_DRACONIC_ANCESTRY_BRASS||ID_RACIAL_TRAIT_DRACONIC_ANCESTRY_GOLD||ID_RACIAL_TRAIT_DRACONIC_ANCESTRY_RED" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_POISON" requirements="ID_RACIAL_TRAIT_DRACONIC_ANCESTRY_GREEN" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_COLD" requirements="ID_RACIAL_TRAIT_DRACONIC_ANCESTRY_SILVER||ID_RACIAL_TRAIT_DRACONIC_ANCESTRY_WHITE" />
+		</rules>
+	</element>
+
+	<element name="Draconic Ancestry (Black)" type="Racial Trait" source="Playerâ€™s Handbook" id="ID_RACIAL_TRAIT_DRACONIC_ANCESTRY_BLACK">
+		<supports>Draconic Ancestry</supports>
+		<description>
+			<div element="ID_RACIAL_TRAIT_DRACONIC_ANCESTRY" />
+		</description>
+		<sheet alt="Black">
+			<description>Your draconic ancestry is {{draconic-ancestry}}. Your damage type is {{draconic-ancestry:damage type}}. Your breath weapon is {{draconic-ancestry:breath}}.</description>
+		</sheet>
+		<rules>
+			<stat inline="true" name="draconic-ancestry" value="Black"/>
+			<stat inline="true" name="draconic-ancestry:damage type" value="Acid" />
+			<stat inline="true" name="draconic-ancestry:breath" value="5 by 30 ft. line (Dex. save)" />
+		</rules>
+	</element>
+	
 
 	<element name="Draconic Ancestry (Blue)" type="Racial Trait" source="Playerâ€™s Handbook" id="ID_RACIAL_TRAIT_DRACONIC_ANCESTRY_BLUE">
 		<supports>Draconic Ancestry</supports>
