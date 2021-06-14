@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Shadow Butcher</name>
+        <description>The Shadow Butcer concocted by KaiRaider</description>
+        <author>KaiRaider</author>
+        <update version="0.0.6">
+            <file name="rogue-shadowbutcher.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/xanathars-guide-to-everything/archetypes/rogue-scout.xml" />
+        </update>
+    </info>
+    <element name="Shadow Butcher" type="Archetype" source="KaiRaider" id="ID_WOTC_XGTE_ARCHETYPE_SHADOWBUTCHER">
+        <supports>Roguish Archetype</supports>
+        <description>
+            <p>You are skilled in stealth and surviving far from the streets of a city, allowing you to scout ahead of your companions during expeditions. Rogues who embrace this archetype are at home in the wilderness and among barbarians and rangers, and many Scouts serve as the eyes and ears of war bands. Ambusher, spy, bounty hunterâ€”these are just a few of the roles that Scouts assume as they range the world.</p>
+            <div element="ID_WOTC_XGTE_ARCHETYPE_FEATURE_SHADOWBUTCHER_SHADOWSTEP" />
+            <div element="ID_WOTC_XGTE_ARCHETYPE_FEATURE_SHADOWBUTCHER_SANGUNARY_BLADE" />
+            <div element="ID_WOTC_XGTE_ARCHETYPE_FEATURE_SHADOWBUTCHER_BRUTALTHIRST" />
+            <div element="ID_WOTC_XGTE_ARCHETYPE_FEATURE_SHADOWBUTCHER_CLOAK_OF_SHADOWS" />
+            <div element="ID_WOTC_XGTE_ARCHETYPE_FEATURE_SHADOWBUTCHER_ENSANGUINE" />
+        </description>
+        <sheet>
+            <description>Combines stealth with vicious brutality.</description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_SHADOWBUTCHER_SHADOWSTEP" level="3"/>
+            <grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_SHADOWBUTCHER_SANGUNARY_BLADE" level="3"/>
+            <grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_SHADOWBUTCHER_BRUTALTHIRST" level="9"/>
+            <grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_SHADOWBUTCHER_CLOAK_OF_SHADOWS" level="13"/>
+            <grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_SHADOWBUTCHER_ENSANGUINE" level="17"/>
+        </rules>
+    </element>
+    <element name="Shadow Step" type="Archetype Feature" source="KaiRaider" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_SHADOWBUTCHER_SHADOWSTEP">
+        <description>
+            <p>Starting, at 3rd level, you gain the ability to step from one shadow into another. When you are in dim light or darkness, as a bonus action, you can teleport up to 30 feet to an unoccupied space you can see that is also in dim light or darkness. You then have advantage on the first melee attack you make before the end of the turn.</p>
+        </description>
+        <sheet action="Bonus Action">
+            <description> In dim light or darkness teleport up to 30 feet to an unoccupied space you can see that is also in dim light or darkness. You then have advantage on the first melee attack you make before the end of the turn.</description>
+        </sheet>
+    </element>
+    <element name="Sanguinary Blade" type="Archetype Feature" source="KaiRaider" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_SHADOWBUTCHER_SANGUNARY_BLADE">
+        <description>
+            <p>Starting at 3rd level, when you take this archetype, you acquire a sanguine blade. This blade can be anything you are proficient with, has the same stats as that weapon. When attacking with the sanguine blade you can choose to apply a 1 min bleed effect instead of doing normal damage. This bleed does 2 piercing damage at the start of the target's turn. If your sanguine blade is ever lost or destroyed you may perform a ritual with your blood to make a new weapon your sanguine blade after a long rest.It gains +2 on all attack and damage rolls on bleeding creatures.Increase bleed to 3 at 9th lvl, 4 at 13th lvl, 5 at 17th lvl.
+            </p>
+        </description>
+        <sheet>
+            <description>This blade can be anything you are proficient with, has the same stats as that weapon. When attacking with the sanguine blade you can choose to apply a 1 min bleed effect instead of doing normal damage. This bleed does 2 piercing damage at the start of the target turn. If your sanguine blade is ever lost or destroyed you may perform a ritual with your   make a new weapon your sanguine blade after a long rest.It gains +2 on all attack and damage rolls on bleeding creatures.</description>
+        </sheet>
+    </element>
+    <element name="Brutal Thirst" type="Archetype Feature" source="KaiRaider" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_SHADOWBUTCHER_BRUTALTHIRST">
+        <description>
+            <p>At 9th level, if you hit with your sanguine blade, you deal normal damage and the target must succeed on a Constitution saving throw or take on the rupture affect for thirty seconds. This affect causes the target to bleed dealing 1d4 piercing damage on the start of each of the target's turns. This affect does not stack with itself.If the target was already bleeding add 1d6 to the damage of the attack.</p>
+        </description>
+        <sheet>
+            <description>If you hit with your sanguine blade, you deal normal damage and the target must succeed on a Constitution saving throw or take on the rupture affect for thirty seconds. This affect causes the target to bleed dealing 1d4 piercing damage on the start of each of the target's turns. This affect does not stack with itself.If the target was already bleeding add 1d6 to the damage of the attack.</description>
+        </sheet>
+    </element>
+    <element name="Cloak of Shadows" type="Archetype Feature" source="KaiRaider" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_SHADOWBUTCHER_CLOAK_OF_SHADOWS">
+        <description>
+            <p>Starting at 13th level, you have learned to become one with the shadows. You can move your full speed without breaking stealth and when you are in an area of dim light or darkness, you can use your bonus action to become invisible. Anything you are wearing or carrying is invisible as long as it is on your person. You remain invisible until you make an attack, cast a spell, or are in an area of bright light.</p>
+        </description>
+        <sheet action="Bonus Action">
+            <description>You can move your full speed without breaking stealth and when you are in an area of dim light or darkness, you can use your bonus action to become invisible. Anything you are wearing or carrying is invisible as long as it is on your person. You remain invisible until you make an attack, cast a spell, or are in an area of bright light.</description>
+        </sheet>
+    </element>
+    <element name="Ensanguine" type="Archetype Feature" source="KaiRaider" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_SHADOWBUTCHER_ENSANGUINE">
+        <description>
+            <p>Starting at 17th level, you are now a master of making your enemies bleed to death with no remorse and gain the following benefits.You can use your action to cause all of your bleeds to deal their current remaining damage Instantaneously. You must finish a long rest before you may benefit from this affect again.</p>
+        </description>
+        <sheet action="Action">
+            <description>Cause all of your bleeds to deal their current remaining damage instantaneously. You must finish a long rest before you may benefit from this affect again.</description>
+        </sheet>
+    </element>
+</elements>
