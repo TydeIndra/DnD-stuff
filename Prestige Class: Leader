@@ -100,7 +100,7 @@ Investigation, or Persuasion<br/>
 			<p>At 1st level, you gain access to abilities called Stratagems. You learn 2 Stratagems of your choice from the list on pages 4 and 5 immediately when you reach 1st leveL and learn additional Stratagems of your choice from the list as you gain levels in this prestige class. When you gain a level in this prestige class, you may choose one Stratagem that you know and replace it with a different one. Stratagems are not magical and cannot be counterspelled or dispelled. They can be used at-will at any time, and do not have a limited number of uses. You can only use Stratagems that you know.</p>
 			<p class="indent">All stratagems describe affecting an "ally" or "allies." Stratagems can only affect allied creatures as an "ally" target if they meet all of the following conditions:
 			    <list typer="bullet">
-			        <item>
+			       <item>
 			            <description>
 			                Ally targets must willingly allow you to affect them (or must be charmed and unwillingly allow you to do so)
 			            </description>
@@ -121,7 +121,7 @@ telepathy, illusion, or other magic)
 			        Ally targets must not have used a Stratagem of Command themselves since the start of their last turn.
                         </description>
                     </item>
-			    </list>
+                </list>
 			</p>
 			<p class="indent">Once you have used a Stratagem, you cannot use any Stratagems until the start of your next turn.</p>
 		</description>
@@ -130,31 +130,41 @@ telepathy, illusion, or other magic)
 		</sheet>
 		<rules />
 	</element>
-	<element name="Runic Magic" type="Class Feature" source="Unearthed Arcana: Prestige Classes and Rune Magic" id="ID_WOTC_UA20151005_PRESTIGE_CLASS_FEATURE_LEADER_GLORY">
+	<element name="Moment of Glory" type="Class Feature" source="Unearthed Arcana: Prestige Classes and Rune Magic" id="ID_WOTC_UA20151005_PRESTIGE_CLASS_FEATURE_LEADER_GLORY">
 		<description>
-			<p>Runes can make use of your own magical power to augment some of their effects. You gain a number of spell slots as specified on the Rune Scribe table, but this prestige class does not grant spells known. Instead, as a rune scribe, you can expend your spell slots to empower runes, as described in the “Rune Magic” section below.</p>
-			<p class="indent">For the purpose of multiclassing, to determine your total spell slots, add your levels in rune scribe to your levels in classes that grant you the Spellcasting feature. For example, if you are a rune scribe 4/wizard 6, you would have the spell slots of a 10th-level character, in addition to having the cantrips and spellbook of a 6th-level wizard.</p>
+			<p>At 2nd level you learn how to respond as a leader in times of
+extreme crisis. You gain each of the abilities listed below.
+     <list typer="bullet">
+		<item>
+                        <description>
+                          <b>All According to Plan</b>  When a creature you can see within 30 feet of you who can see and hear you makes a weapon attack, but before they roll you can use your reaction to grant that creature advantage on the attack. If the attack hits, it becomes a critical hit.
+                        </description>
+                    </item>
+                     <item>
+                        <description>
+                           <b>Believe In Yourself</b> When a creature you can see within 60 feet of you who can see and hear you fails a saving throw, you can use your reaction to allow that creature to reroll the saving throw. They must use the new roll.
+                        </description>
+                    </item>
+                    <item>
+                        <description>
+                   <b>Don't You Die On Me</b> You can use an action to touch one creature that has O hit points and is not stabilized The creature is restored to 1 hit point, and it can also choose to spend up to a number of hit dice equal to half your proficiency bonus, regaining hit points as it would if it had spent those hit dice at the end of a short rest. In addition, the creature gains temporary hit points equal to its total number of hit dice + your proficiency bonus for 1 minute.
+                        </description>
+                    </item>
+                     <item>
+                        <description>
+                   <b>It's Now or Never</b> When a creature you can see within 60 feet of you who can see and hear you and can take actions begins their turn, you can use your reaction to impart a sense of extreme urgency upon them. That creature can immediately Dash and Disengage.
+                        </description>
+                    </item>	        
+			    </list>
+</p>
+			<p class="indent">Once you have used any of these abilities, you cannot use
+any of them again until you finish a long rest.</p>
 		</description>
-		<sheet display="false">
-			<description>You gain a number of spell slots as specified on the Rune Scribe table.</description>
-		</sheet>
-		<spellcasting name="Rune Scribe">
-			<list>Rune Scribe</list>
-		</spellcasting>
-		<rules>
-			<stat name="rune scribe:spellcasting:slots:1" value="2" level="1" />
-			<stat name="rune scribe:spellcasting:slots:1" value="1" level="2" />
-			<stat name="rune scribe:spellcasting:slots:1" value="1" level="3" />
-			<stat name="rune scribe:spellcasting:slots:2" value="2" level="3" />
-			<stat name="rune scribe:spellcasting:slots:2" value="1" level="4" />
-			<stat name="rune scribe:spellcasting:slots:3" value="2" level="5" />
-		</rules>
 	</element>
-	<element name="Runic Discovery" type="Class Feature" source="Unearthed Arcana: Prestige Classes and Rune Magic" id="ID_WOTC_UA20151005_PRESTIGE_CLASS_FEATURE_RUNE_SCRIBE_RUNIC_DISCOVERY">
+	<element name="Stroke of Genius" type="Class Feature" source="Unearthed Arcana: Prestige Classes and Rune Magic" id="ID_WOTC_UA20151005_PRESTIGE_CLASS_FEATURE_LEADER_GENIUS">
 		<description>
-			<p>Your continuing study of runic magic allows you to recreate the secrets of new runes without first needing to uncover them. At 2nd, 3rd, and 5th level, choose a rare rune. You can attune to that rune even if you do not possess the master rune for it. (See the “Rune Magic” section below for information on rune rarity and master runes.)</p>
-			<p class="indent">In order to attune to a rune in this manner, you must spend a short rest doing nothing but meditating on the rune. At the end of the short rest, you are attuned to the rune. You are considered to always have the rune on your person for the purpose of determining whether you can use its features.</p>
-			<p class="indent">You can spend another short rest doing nothing but meditating on the rune to end your attunement to it.</p>
+			<p>Starting at 2nd level you can use a bonus action to activateone of your Stratagems that normally requires an action, or use one of your Stratagems that normally requires a bonus action or reaction without that requirement. You can do so even if you've already used a Stratagem this round, and doing so doesn't prevent you from using another Stratagem before the start of your next turn.</p>
+			<p class="indent">Once you have done so, you cannot do so again until you finish a short or long rest. The number of uses increases to 2 when you reach 4th level.</p>
 		</description>
 		<sheet>
 			<description>Choose one rune, you can take short rest in order to attune to that rune and get all features of its master rune, as if you had it on person. You can spend another short rest doing nothing but meditating on the rune to end your attunement to it.</description>
