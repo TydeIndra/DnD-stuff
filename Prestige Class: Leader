@@ -168,12 +168,40 @@ any of them again until you finish a long rest.</p>
 		</description>
 		<sheet>
 			<description>Starting at 2nd level you can use a bonus action to activateone of your Stratagems that normally requires an action, or use one of your Stratagems that normally requires a bonus action or reaction without that requirement. You can do so even if you've already used a Stratagem this round, and doing so doesn't prevent you from using another Stratagem before the start of your next turn.Once you have done so, you cannot do so again until you finish a short or long rest. The number of uses increases to 2 when you reach 4th level</description>
+			</sheet>
 	</element>
 	<element name="Leadership Expertise" type="Class Feature" source="Unearthed Arcana: Prestige Classes and Rune Magic" id="ID_WOTC_UA20151005_PRESTIGE_CLASS_FEATURE_LEADER_EXPERTISE">
 		<description>
 			<p>At 3rd level your experience as a leader has taught you lessons and might have motivated you to seek out new lessons from the masters of your field You excel beyond the normal capabilities of those pursuing the art of leadership. Choose one of the following skills or tools: Animal Handling, Deception, History, Insight, Intimidation,Investigation, Performance, Persuasion, or Religion, or navigator's tools, any gaming set, or any musical instrument. You must choose a skill or tool that you already have proficiency with. Your proficiency bonus is doubled for any ability checks you make that use that proficiency.</p>
-		</sheet>
-		<rules>
+				<rules>
 			<select type="Class Feature" name="Expertise (Leader)" level="1" number="1" supports="ID_INTERNAL_SUPPORT_EXPERTISE"/>
 		</rules>
+		</description>
+	</element>
+		<element name="Perfect Coordination" type="Class Feature" source="Unearthed Arcana: Prestige Classes and Rune Magic" id="ID_WOTC_UA20151005_PRESTIGE_CLASS_FEATURE_LEADER_COORDINATION">
+		<description>
+			<p>Starting at 3rd level when another friendly creature who can see and hear you (telepathic hearing counts) would start its turn, it can choose to use its reaction to delay its turn. Its turn does not start when it normally would It begins to wait for your signal and the next turn begins instead.</p>
+			<p class="indent">Each time a turn ends, you may use your reaction to signal any friendly creatures that are waiting for it which you can see. Those creatures begin their delayed turns. If there are multiple delayed turns, you choose the order in which they occur. After these turns are taken, the creatures' initiatives change to match the new order. Effects that occur at the start or end of the creature's turn both happen when the turn is delayed, not when the delayed turn is finally taken.</p>
+			<p class="indent">A creature can choose to ignore the signal but it will not take its delayed turn. A creature who does not take its delayed turn loses its delayed turn and takes its next turn in the normal initiative order.</p>
+		</description>
+		<sheet>
+			<description>Each time a turn ends, you may use your reaction to signal any friendly creatures that are waiting for it which you can see. Those creatures begin their delayed turns. If there are multiple delayed turns, you choose the order in which they occur. After these turns are taken, the creatures' initiatives change to match the new order. Effects that occur at the start or end of the creature's turn both happen when the turn is delayed, not when the delayed turn is finally taken.A creature can choose to ignore the signal but it will not take its delayed turn. A creature who does not take its delayed turn loses its delayed turn and takes its next turn in the normal initiative order.</description>
+			</sheet>
+	</element>
+		<element name="Leaderâ€™s Presence" type="Class Feature" source="Unearthed Arcana: Prestige Classes and Rune Magic" id="ID_WOTC_UA20151005_PRESTIGE_CLASS_FEATURE_LEADER_PRESENCE">
+		<description>
+			<p>At 5th level your very presence begins to affect those you lead and fight with, propeling them to new heights under your watch. A creature cannot benefit from the same kind of presence more than once at the same time.</p>
+		</description>
+		<rules>
+			<select type="Class Feature" name="Leaderâ€™s Presence (Level 5)" supports="Leaderâ€™s Presence" level="5" number="1" />
+		</rules>
+	</element>
+		<element name="Gaze of Two Minds" type="Class Feature" source="Playerâ€™s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_ELDRITCH_INVOCATION_GAZE_OF_TWO_MINDS">
+		<supports>Eldritch Invocation</supports>
+		<description>
+			<p>You and creatures of your choice that can see and hear you are soothed by your very presence and leadership. Whenever an affected creature regains hit points from a class feature that restores more than 4 hit points or from spending hit dice, it regains additional hit points equal to half your proficiency bonus (if more than one hit die is spent, each hit die gains the bonus} If a spell causes an affected creature to regain hit points, it regains additional hit points equal to your proficiency bonus or twice the spell's level whichever is higher. Divide this bonus in half if the spell duration is anything longer than Instantaneous, if the casting time is less than 1 action, or if the spell can heal more than one creature per casting..</p>
+		</description>
+		<sheet action="Action">
+			<description>You can touch a willing humanoid and perceive through its senses until the end of your next turn. As long as the creature is on the same plane of existence as you, you can use your action on subsequent turns to maintain this connection, extending the duration until the end of your next turn. While perceiving through the other creatureâ€™s senses, you benefit from any special senses possessed by that creature, and you are blinded and deafened to your own surroundings.</description>
+		</sheet>
 	</element>
